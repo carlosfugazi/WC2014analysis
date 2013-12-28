@@ -32,8 +32,8 @@ def load_dict_ranking_from_file(filename1):
 	dict_['rankings'] = dict_rankings
 	return dict_
 
-def get_list_of_teams_in_2006WC():
-	fopen = open('2006WC_results.txt','r')
+def get_list_of_teams_in_WC_soccerbase_format(filename1,year):
+	fopen = open(filename1,'r')
 	lines = fopen.readlines()
 	dict_ = {}
 	days = ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday']
@@ -46,7 +46,7 @@ def get_list_of_teams_in_2006WC():
 		line = line1.strip()
 		#print (line.strip()).split('\t')
 		for day in days:
-			if ( line.find('2006') != -1 ):
+			if ( line.find(str(year)) != -1 ):
 				current_date = line.strip()
 				#print current_date
 				is_date_str = True
@@ -65,9 +65,9 @@ def get_list_of_teams_in_2006WC():
 			# stop_here
 			dict_matches['{}'.format(match)] = dict(result=elements[1].replace(' ',''),
 				category=current_category,date=current_date,
-				team1=elements[0],team2=elements[2])
-			teams.append(elements[0])
-			teams.append(elements[2])
+				team1=elements[0].strip(),team2=elements[2].strip())
+			teams.append(elements[0].strip())
+			teams.append(elements[2].strip())
 	print "total matches", match
 	dict_['matches'] = dict_matches
 	dict_['teams']   = list(set(teams))
@@ -195,11 +195,23 @@ def analyze_2010_WC_results_rankings():
 	analyze_WC_results_with_ranking(dict_ranking,dict_wc_results,'2010 WC')
 
 def analyze_2006_WC_results_rankings():
-	dict_wc_results = get_list_of_teams_in_2006WC()
+	# dict_wc_results = get_list_of_teams_in_2006WC()
+	dict_wc_results = get_list_of_teams_in_WC_soccerbase_format('2006WC_results.txt',2006)
 	analyze_WC_results_dict(dict_wc_results)
 	# stop_here
 	dict_ranking    = load_dict_ranking_from_file('top_90_FIFA_rankings_May_2006.txt')
 	analyze_WC_results_with_ranking(dict_ranking,dict_wc_results,'2006 WC')
+
+def analyze_2002_WC_results_rankings():
+	dict_wc_results = get_list_of_teams_in_WC_soccerbase_format('2002WC_results.txt',2002)
+	analyze_WC_results_dict(dict_wc_results)
+	# stop_here
+	dict_ranking    = load_dict_ranking_from_file('top_90_FIFA_ranking_May_2002.txt')
+	analyze_WC_results_with_ranking(dict_ranking,dict_wc_results,'2002 WC')
+
+def parse_wikipedia_team_confederation(filename1,team):
+	pass
+
 
 def analyze_WC_results_dict(dict_):
 	categories = []
@@ -208,20 +220,35 @@ def analyze_WC_results_dict(dict_):
 	print len(categories)
 	print set(categories)
 	categories = list(set(categories))
-	cat_matches = [[]]*(len(categories))
+	# cat_matches = [[]]*(len(categories))
+	cat_matches = {}
+	for cat in categories:
+		cat_matches[cat] = []
+
 	for match in dict_['matches']:
-		index1 = categories.index( dict_['matches'][match]['category'] )
-		(cat_matches[index1]).append(match)
+		# index1 = categories.index( dict_['matches'][match]['category'] )
+		# print index1
+		# (cat_matches[index1]).append(match)
+		(cat_matches[dict_['matches'][match]['category']]).append(match)
 	# print cat_matches
+	# stop_here
 	for i,cat in enumerate(categories):
-		print '\n',cat, "number of matches =", len(cat_matches[i]),'\n'
+		print '',cat, "number of matches =", len(cat_matches[cat]),''
 		# for match in cat_matches[i]:
 		# 	print dict_['matches'][match]['team1'],dict_['matches'][match]['result'],\
 		# 		dict_['matches'][match]['team2']
+
 	for team in dict_['teams']:
+		matches_played_by_team= 0
 		for match in dict_['matches']:
 			if ( dict_['matches'][match]['category'] == 'Group Matches' and team in [ dict_['matches'][match]['team1'],dict_['matches'][match]['team2'] ]):	
-				print team, match
+				matches_played_by_team += 1
+				# print team
+		# print matches_played_by_team
+		if ( matches_played_by_team != 3 ):
+			raise ValueError, "Not all group matches ({}/3) loaded for {}, total matches = {}".format(
+				matches_played_by_team,team,len(dict_['matches'].keys()))
+
 def analyze_WC_results_with_ranking(dict_ranking,dict_wc_results,label_results):
 	from difflib import get_close_matches
 	# dict_ranking = load_dict_ranking_from_file()
