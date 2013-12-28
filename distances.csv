@@ -1,0 +1,33 @@
+Position,V1,V2,V3,X12,X23,XTOT
+G4,Natal,Manaus,Recife,1720,1762,3482
+A2,Sao Paulo,Manaus,Recife,1667,1762,3429
+A4,Natal,Manaus,Brasilia,1720,1202,2922
+D1,Fortaleza,Sao Paulo,Natal,1443,1443,2886
+G2,Salvador,Manaus,Brasilia,1621,1202,2823
+Brazil,Sao Paulo,Fortaleza,Brasilia,1473,1050,2523
+E1,Brasilia,Salvador,Manaus,660,1621,2281
+E3,Porto Alegre,Salvador,Rio,1432,752,2184
+F2,Rio,Cuiaba,Salvador,980,1191,2171
+C3,Recife,Brasilia,Fortaleza,1031,1050,2081
+E4,Porto Alegre,Curitiba,Manaus,340,1701,2041
+D3,Manaus,Sao Paulo,Belo Horiz.,1667,305,1972
+B2,Salvador,Porto Alegre,Sao Paulo,1432,528,1960
+D4,Manaus,Recife,Natal,1762,158,1920
+F4,Curitiba,Cuiaba,Porto Alegre,808,1041,1849
+C4,Recife,Natal,Cuiaba,158,1573,1731
+H4,Cuiaba,Porto Alegre,Sao Paulo,1041,528,1569
+D2,Fortaleza,Recife,Belo Horiz.,391,1020,1411
+C2,Belo Horiz.,Natal,Fortaleza,1138,271,1409
+H3,Cuiaba,Rio,Curitiba,980,420,1400
+B4,Cuiaba,Porto Alegre,Curitiba,1041,340,1381
+G3,Natal,Fortaleza,Brasilia,271,1050,1321
+B3,Cuiaba,Rio,Sao Paulo,980,223,1203
+H2,Belo Horiz.,Porto Alegre,Curitiba,834,340,1174
+B1,Salvador,Rio,Curitiba,752,420,1172
+F3,Curitiba,Belo Horiz.,Salvador,510,600,1110
+E2,Brasilia,Curitiba,Rio,672,420,1092
+F1,Rio,Belo Horiz.,Porto Alegre,212,834,1046
+G1,Salvador,Fortaleza,Recife,640,391,1031
+C1,Belo Horiz.,Brasilia,Cuiaba,388,544,932
+A3,Natal,Fortaleza,Recife,271,391,662
+H1,Belo Horiz.,Rio,Sao Paulo,212,223,435

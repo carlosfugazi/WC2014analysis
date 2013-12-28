@@ -1,0 +1,93 @@
+May 2006
+Rnk	Team	Pts	+/- Pos	
+1	 Brazil	827	0	Equal	
+2	 Czech Republic	772	0	Equal	
+3	 Netherlands	768	0	Equal	
+4	 Mexico	758	2	Up	
+5	 USA	756	-1	Down	
+5	 Spain	756	0	Equal	
+7	 Portugal	750	1	Up	
+8	 France	749	-1	Down	
+9	 Argentina	746	-1	Down	
+10	 England	741	0	Equal	
+11	 Nigeria	736	1	Up	
+11	 Denmark	736	0	Equal	
+13	 Italy	728	1	Up	
+14	 Turkey	726	-1	Down	
+15	 Cameroon	722	0	Equal	
+16	 Sweden	709	0	Equal	
+17	 Egypt	708	1	Up	
+18	 Japan	705	-1	Down	
+19	 Germany	696	0	Equal	
+20	 Greece	694	-1	Down	
+21	 Tunisia	693	0	Equal	
+22	 Uruguay	689	0	Equal	
+23	 Iran	686	-1	Down	
+23	 Croatia	686	1	Up	
+25	 Romania	685	0	Equal	
+26	 Costa Rica	683	0	Equal	
+27	 Colombia	681	0	Equal	
+28	 Senegal	679	1	Up	
+29	 Poland	677	-1	Down	
+29	 Korea Republic	677	1	Up
+31	 Republic of Ireland	671	-1	Down	
+32	 Côte d'Ivoire	669	0	Equal	
+33	 Paraguay	653	0	Equal	
+34	 Saudi Arabia	651	0	Equal	
+35	 Switzerland	648	0	Equal	
+36	 Morocco	646	0	Equal	
+37	 Russia	645	0	Equal	
+37	 Bulgaria	645	1	Up	
+39	 Ecuador	631	0	Equal	
+40	 Norway	627	0	Equal	
+41	 Slovakia	613	2	Up	
+42	 Honduras	612	-1	Down	
+42	 Australia	612	2	Up	
+44	 Serbia and Montenegro	610	2	Up	
+45	 Ukraine	609	-4	Down	
+46	 Jamaica	607	-2	Down	
+47	 Trinidad and Tobago	604	0	Equal	
+48	 Ghana	600	2	Up	
+49	 Finland	599	0	Equal	
+49	 Israel	599	-2	Down	
+51	 Guinea	597	1	Up	
+52	 Iraq	595	0	Equal	
+53	 South Africa	593	-2	Down	
+54	 Bahrain	588	0	Equal	
+55	 Zimbabwe	586	0	Equal	
+56	 Belgium	582	0	Equal	
+57	 Angola	581	1	Up	
+57	 Zambia	581	-1	Down	
+59	 Scotland	576	3	Up	
+60	 Uzbekistan	571	-1	Down	
+61	 Togo	569	-2	Down
+62	 Guatemala	565	-1	Down	
+63	 Bosnia-Herzegovina	561	0	Equal	
+64	 Chile	557	3	Up	
+65	 Belarus	553	-1	Down	
+66	 Peru	550	1	Up	
+66	 Mali	550	-1	Down	
+68	 China PR	545	-2	Down	
+69	 Congo DR	544	1	Up	
+70	 Latvia	541	-1	Down	
+71	 Slovenia	539	0	Equal	
+71	 Venezuela	539	0	Equal	
+71	 United Arab Emirates	539	7	Up	
+74	 Kuwait	538	-1	Down	
+74	 Wales	538	0	Equal	
+76	 Hungary	535	-1	Down	
+77	 Estonia	534	2	Up	
+78	 Qatar	533	-2	Down	
+79	 Austria	531	-3	Down	
+80	 Cuba	527	-1	Down	
+81	 Panama	523	0	Equal	
+82	 Oman	519	0	Equal	
+83	 Canada	515	1	Up	
+84	 Jordan	513	-1	Down	
+85	 Albania	512	1	Up	
+86	 Libya	511	-1	Down	
+87	 Algeria	505	0	Equal	
+88	 Korea DPR	503	0	Equal	
+89	 Burkina Faso	500	0	Equal	
+90	 Syria	496	0	Equal	
+91	 FYR Macedonia	489	0	Equal

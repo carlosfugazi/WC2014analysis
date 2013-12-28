@@ -1,0 +1,123 @@
+May 2010
+Rnk	Team	Pts	+/- Pos	
+1	 Brazil	1611	0	Equal	
+2	 Spain	1565	0	Equal	
+3	 Portugal	1249	0	Equal	
+4	 Netherlands	1231	0	Equal	
+5	 Italy	1184	0	Equal	
+6	 Germany	1082	0	Equal	
+7	 Argentina	1076	0	Equal	
+8	 England	1068	0	Equal	
+9	 France	1044	1	Up	
+10	 Croatia	1041	-1	Down	
+11	 Russia	1015	0	Equal	
+12	 Egypt	967	1	Up	
+13	 Greece	964	-1	Down	
+14	 USA	957	0	Equal	
+15	 Serbia	947	1	Up	
+16	 Uruguay	899	2	Up	
+17	 Mexico	895	0	Equal	
+18	 Chile	888	-3	Down	
+19	 Cameroon	887	0	Equal	
+20	 Australia	886	0	Equal	
+21	 Nigeria	883	-1	Down	
+22	 Norway	882	0	Equal	
+23	 Ukraine	875	2	Up	
+24	 Switzerland	866	2	Up	
+25	 Slovenia	860	-2	Down	
+26	 Israel	857	-2	Down	
+27	 Cote d'Ivoire	856	0	Equal	
+28	 Romania	853	0	Equal	
+29	 Turkey	830	4	Up	
+30	 Algeria	821	1	Up	
+31	 Paraguay	820	-1	Down	
+32	 Ghana	800	0	Equal	
+33	 Czech Republic	793	-4	Down	
+34	 Slovakia	777	4	Up	
+35	 Colombia	776	-1	Down	
+36	 Denmark	767	-1	Down	
+37	 Sweden	761	0	Equal	
+38	 Honduras	734	2	Up	
+39	 Bulgaria	711	0	Equal	
+40	 Costa Rica	710	2	Up	
+41	 Republic of Ireland	709	2	Up	
+42	 Gabon	700	-1	Down	
+43	 Scotland	699	1	Up	
+44	 Ecuador	694	-8	Down	
+45	 Japan	682	0	Equal	
+46	 Latvia	652	0	Equal	
+47	 South Korea	632	0	Equal	
+48	 Burkina Faso	611	4	Up	
+49	 Venezuela	608	0	Equal	
+49	 Lithuania	608	-1	Down	
+51	 Bosnia-Herzegovina	604	0	Equal	
+52	 Finland	584	-3	Down	
+53	 Peru	578	0	Equal	
+54	 Mali	575	0	Equal	
+55	 Tunisia	574	0	Equal	
+56	 Northern Ireland	566	1	Up	
+57	 Hungary	565	-1	Down	
+58	 Poland	561	0	Equal	
+59	 Belgium	541	3	Up	
+60	 Benin	531	-1	Down	
+61	 Iran	521	-1	Down	
+61	 FYR Macedonia	521	-1	Down
+63	 Canada	516	0	Equal	
+64	 Montenegro	500	1	Up	
+65	 Bolivia	499	2	Up	
+66	 Saudi Arabia	498	0	Equal	
+67	 Cyprus	486	1	Up	
+68	 Austria	479	-4	Down	
+69	 Bahrain	475	0	Equal	
+70	 Morocco	463	0	Equal	
+71	 Zambia	456	0	Equal	
+72	 El Salvador	452	-1	Down	
+73	 Uganda	440	1	Up	
+74	 Panama	434	2	Up	
+75	 Senegal	422	2	Up	
+76	 Togo	418	-3	Down	
+77	 Wales	415	-2	Down	
+78	 New Zealand	410	0	Equal	
+79	 Albania	406	1	Up	
+80	 Iraq	405	2	Up	
+81	 Jamaica	399	-2	Down	
+82	 Belarus	397	-1	Down	
+83	 South Africa	392	7	Up	
+84	 China PR	387	1	Up	
+85	 Mozambique	383	4	Up	
+86	 Malawi	382	-4	Down	
+87	 Guinea	381	0	Equal	
+88	 Angola	379	-3	Down	
+89	 Moldova	378	-5	Down	
+90	 Iceland	367	1	Up	
+91	 Oman	362	6	Up	
+91	 Haiti	362	-4	Down	
+93	 Gambia	361	0	Equal	
+94	 Uzbekistan	354	0	Equal	
+95	 Trinidad and Tobago	353	-4	Down	
+96	 Qatar	351	-1	Down	
+97	 Kuwait	350	-1	Down	
+98	 Syria	343	0	Equal	
+99	 Estonia	320	5	Up	
+100	 Armenia	311	-1	Down	
+101	 United Arab Emirates	310	-1	Down	
+102	 Libya	309	0	Equal	
+103	 Congo	308	-2	Down	
+104	 Jordan	300	-1	Down	
+105	 North Korea	285	1	Up	
+106	 Thailand	276	-1	Down	
+107	 Rwanda	269	0	Equal	
+108	 Tanzania	261	0	Equal	
+109	 Azerbaijan	259	1	Up	
+110	 Zimbabwe	258	3	Up	
+111	 Namibia	251	1	Up	
+112	 Yemen	248	-3	Down	
+113	 Kenya	243	1	Up	
+114	 Guatemala	241	1	Up	
+114	 Cape Verde Islands	241	3	Up	
+116	 Botswana	236	0	Equal	
+117	 Vietnam	231	1	Up	
+118	 Sudan	219	3	Up	
+119	 Antigua and Barbuda	218	0	Equal	
+120	 Georgia	217	-1	Down	
+121	 Congo DR	215	-10	Down	

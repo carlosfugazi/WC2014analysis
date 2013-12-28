@@ -1,0 +1,16 @@
+1A,Belo Horizonte,Fortaleza,Belo Horizonte,Rio de Janeiro
+2B,Belo Horizonte,Fortaleza,Belo Horizonte,Rio de Janeiro
+1C,Rio de Janeiro,Fortaleza,Belo Horizonte,Rio de Janeiro
+2D,Rio de Janeiro,Fortaleza,Belo Horizonte,Rio de Janeiro
+1E,Brasilia,Rio de Janeiro,Belo Horizonte,Rio de Janeiro
+2F,Brasilia,Rio de Janeiro,Belo Horizonte,Rio de Janeiro
+1G,Porto Alegre,Rio de Janeiro,Belo Horizonte,Rio de Janeiro
+2H,Porto Alegre,Rio de Janeiro,Belo Horizonte,Rio de Janeiro
+1B,Fortaleza,Salvador,Sao Paulo,Rio de Janeiro
+2A,Fortaleza,Salvador,Sao Paulo,Rio de Janeiro
+1D,Recife,Salvador,Sao Paulo,Rio de Janeiro
+2C,Recife,Salvador,Sao Paulo,Rio de Janeiro
+1F,Sao Paulo,Brasilia,Sao Paulo,Rio de Janeiro
+2E,Sao Paulo,Brasilia,Sao Paulo,Rio de Janeiro
+1H,Salvador,Brasilia,Sao Paulo,Rio de Janeiro
+2G,Salvador,Brasilia,Sao Paulo,Rio de Janeiro
