@@ -30,12 +30,12 @@ Switzerland	0 - 0	Ukraine
 Su 25Jun 2006	N
 England	1 - 0	Ecuador	  
 Su 25Jun 2006	N
-Portugal	1 - 0	Holland	  
+Portugal	1 - 0	Netherlands	  
 Sa 24Jun 2006	N
 Argentina	2 - 1	Mexico	  
 Sa 24Jun 2006	
 Germany	2 - 0	Sweden
-Cat Group Matches and results
+Cat Group Matches
 Tu 20Jun 2006	N
 Costa Rica	1 - 2	Poland	  
 Tu 20Jun 2006	
@@ -49,27 +49,29 @@ Germany	4 - 2	Costa Rica
 Fr 09Jun 2006	N
 Poland	0 - 2	Ecuador
 Tu 20Jun 2006	N
-Paraguay	2 - 0	Trinidad	  
+Paraguay	2 - 0	Trinidad and Tobago	  
 Tu 20Jun 2006	N
 Sweden	2 - 2	England	  
 Th 15Jun 2006	N
-England	2 - 0	Trinidad	  
+England	2 - 0	Trinidad and Tobago	  
 Th 15Jun 2006	N
 Sweden	1 - 0	Paraguay	  
 Sa 10Jun 2006	N
 England	1 - 0	Paraguay
-We 21Jun 2006	N
-Holland	0 - 0	Argentina	  
-We 21Jun 2006	N
-Ivory Coast	3 - 2	Serbia & M	  
-Fr 16Jun 2006	N
-Argentina	6 - 0	Serbia & M	  
-Fr 16Jun 2006	N
-Holland	2 - 1	Ivory Coast	  
-Su 11Jun 2006	N
-Serbia & M	0 - 1	Holland	  
 Sa 10Jun 2006	N
-Argentina	2 - 1	Ivory Coast
+Trinidad and Tobago	0 - 0	Sweden
+We 21Jun 2006	N
+Netherlands	0 - 0	Argentina	  
+We 21Jun 2006	N
+Cote d'Ivoire	3 - 2	Serbia and Montenegro	  
+Fr 16Jun 2006	N
+Argentina	6 - 0	Serbia and Montenegro	  
+Fr 16Jun 2006	N
+Netherlands	2 - 1	Cote d'Ivoire	  
+Su 11Jun 2006	N
+Serbia and Montenegro	0 - 1	Netherlands	  
+Sa 10Jun 2006	N
+Argentina	2 - 1	Cote d'Ivoire
 We 21Jun 2006	N
 Iran	1 - 1	Angola	  
 We 21Jun 2006	N
@@ -83,17 +85,17 @@ Angola	0 - 1	Portugal
 Su 11Jun 2006	N
 Mexico	3 - 1	Iran
 Th 22Jun 2006	N
-Czech Rep	0 - 2	Italy	  
+Czech Republic	0 - 2	Italy	  
 Th 22Jun 2006	N
 Ghana	2 - 1	USA	  
 Sa 17Jun 2006	N
-Czech Rep	0 - 2	Ghana	  
+Czech Republic	0 - 2	Ghana	  
 Sa 17Jun 2006	N
 Italy	1 - 1	USA	  
 Mo 12Jun 2006	N
 Italy	2 - 0	Ghana	  
 Mo 12Jun 2006	N
-USA	0 - 3	Czech Rep	
+USA	0 - 3	Czech Republic	
 Th 22Jun 2006	N
 Croatia	2 - 2	Australia	  
 Th 22Jun 2006	N

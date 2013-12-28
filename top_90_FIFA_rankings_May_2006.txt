@@ -29,9 +29,9 @@ Rnk	Team	Pts	+/- Pos
 27	 Colombia	681	0	Equal	
 28	 Senegal	679	1	Up	
 29	 Poland	677	-1	Down	
-29	 Korea Republic	677	1	Up
+29	 South Korea	677	1	Up
 31	 Republic of Ireland	671	-1	Down	
-32	 Côte d'Ivoire	669	0	Equal	
+32	 Cote d'Ivoire	669	0	Equal	
 33	 Paraguay	653	0	Equal	
 34	 Saudi Arabia	651	0	Equal	
 35	 Switzerland	648	0	Equal	
