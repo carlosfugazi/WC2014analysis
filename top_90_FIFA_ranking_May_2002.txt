@@ -1,0 +1,93 @@
+May 2002
+Rnk	Team	Pts	+/- Pos	
+1	 France	802	0	Equal	
+2	 Brazil	784	0	Equal	
+3	 Argentina	784	0	Equal	
+4	 Colombia	728	0	Equal	
+5	 Portugal	726	0	Equal	
+6	 Italy	717	0	Equal	
+7	 Mexico	716	0	Equal	
+8	 Spain	713	0	Equal	
+9	 Netherlands	703	0	Equal	
+10	 Yugoslavia	702	0	Equal	
+11	 Germany	695	1	Up	
+12	 England	694	-1	Down	
+13	 USA	690	0	Equal	
+14	 Romania	675	2	Up	
+15	 Ireland	674	4	Up	
+16	 Czech Republic	674	-2	Down	
+17	 Cameroon	672	1	Up	
+18	 Paraguay	671	-3	Down	
+19	 Sweden	665	-2	Down	
+20	 Denmark	657	0	Equal	
+21	 Croatia	655	2	Up	
+22	 Turkey	654	3	Up	
+23	 Belgium	653	-1	Down	
+24	 Uruguay	652	-3	Down	
+25	 Slovenia	649	3	Up	
+26	 Honduras	647	0	Equal	
+27	 Nigeria	644	2	Up	
+28	 Russia	644	-4	Down	
+29	 Costa Rica	643	-2	Down	
+30	 Iran	635	2	Up
+31	 Tunisia	635	-1	Down	
+32	 Japan	634	1	Up	
+33	 Norway	631	-2	Down	
+34	 Saudi Arabia	627	0	Equal	
+35	 Trinidad and Tobago	624	0	Equal	
+36	 Ecuador	624	0	Equal	
+37	 South Africa	623	0	Equal	
+38	 Poland	615	0	Equal	
+39	 Morocco	612	0	Equal	
+40	 South Korea	603	1	Up	
+41	 Finland	600	1	Up	
+42	 Senegal	599	1	Up	
+43	 Egypt	598	-3	Down	
+44	 Ukraine	593	1	Up	
+45	 Chile	590	-1	Down	
+46	 Cote d'Ivoire	580	0	Equal	
+47	 Peru	578	0	Equal	
+48	 Australia	575	0	Equal	
+49	 Slovakia	574	0	Equal	
+50	 China	566	1	Up	
+51	 Israel	563	-1	Down	
+52	 Ghana	558	5	Up	
+53	 Greece	558	1	Up	
+54	 Bulgaria	557	-2	Down	
+55	 Scotland	557	-2	Down	
+56	 Iceland	553	0	Equal	
+57	 Jamaica	549	1	Up	
+58	 Angola	545	1	Up	
+59	 Georgia	545	-4	Down	
+60	 Thailand	544	1	Up	
+61	 Austria	543	-1	Down	
+62	 Guatemala	538	1	Up	
+63	 United Arab Emirates	536	-1	Down	
+64	 Switzerland	531	1	Up	
+65	 Zambia	530	1	Up	
+66	 Zimbabwe	527	1	Up	
+67	 Uzbekistan	523	-3	Down	
+68	 Hungary	523	0	Equal	
+69	 Togo	518	0	Equal	
+70	 Bolivia	512	0	Equal	
+71	 Iraq	509	1	Up	
+72	 Bosnia-Herzegovina	508	1	Up	
+73	 Qatar	507	3	Up	
+74	 Congo DR	505	-3	Down	
+75	 Canada	504	-1	Down	
+76	 Liberia	500	1	Up	
+77	 Kuwait	500	3	Up	
+78	 Cuba	498	1	Up	
+79	 Algeria	497	-1	Down	
+80	 Burkina Faso	497	-5	Down	
+81	 Haiti	496	1	Up	
+82	 Cyprus	492	-1	Down	
+83	 Venezuela	488	0	Equal	
+84	 El Salvador	480	0	Equal	
+85	 Mali	471	1	Up	
+86	 Estonia	471	-1	Down	
+87	 New Zealand	471	0	Equal	
+88	 Belarus	463	0	Equal	
+89	 FYR Macedonia	462	4	Up	
+90	 Northern Ireland	455	1	Up	
+91	 Oman	454	-2	Down	

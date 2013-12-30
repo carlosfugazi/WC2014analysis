@@ -1,6 +1,8 @@
 #
 # analyze FIFA rankings in 2010
 #
+from difflib import get_close_matches
+
 def load_dict_ranking_from_file(filename1):
 	# filename1 = 'top_60_FIFA_ranking_May_2010.txt'
 	fopen = open(filename1,'r')
@@ -54,8 +56,10 @@ def get_list_of_teams_in_WC_soccerbase_format(filename1,year):
 			else:
 				is_date_str = False
 		if ( line.find('Cat') != -1 ):
+			# if ( current_category != None): print current_category, "total matches of previous", match-1
 			current_category = line.replace('Cat ','')
-			print current_category, match
+			# print current_category
+			# current_
 		elif ( is_date_str == True ):
 			pass
 		else:
@@ -68,10 +72,12 @@ def get_list_of_teams_in_WC_soccerbase_format(filename1,year):
 				team1=elements[0].strip(),team2=elements[2].strip())
 			teams.append(elements[0].strip())
 			teams.append(elements[2].strip())
-	print "total matches", match
+	# print current_category, "total matches of previous", match-1
+	print "Loaded results dict", filename1
+	print "\tTotal matches  = ", match-1
 	dict_['matches'] = dict_matches
 	dict_['teams']   = list(set(teams))
-	print len(dict_['teams'])
+	print "\tTotal teams = ", len(dict_['teams'])
 	# print dict_matches
 	# stop_here
 	return dict_
@@ -119,7 +125,7 @@ def analyze_result(result):
 	return result_string,homegoals,awaygoals
 
 def analyze_2010_WC_with_ranking():
-	from difflib import get_close_matches
+	
 	dict_ranking = load_dict_ranking_from_file()
 	dict_ = get_list_of_teams_in_2010WC()
 	for i,team in enumerate(dict_['teams']):
@@ -212,6 +218,13 @@ def analyze_2002_WC_results_rankings():
 def parse_wikipedia_team_confederation(filename1,team):
 	pass
 
+import os
+def add_files_to_repo(files):
+	for file1 in files:
+		os.system('git add {}'.format(file1))
+
+def push_updates_to_github():
+	os.system('git push -u origin master')
 
 def analyze_WC_results_dict(dict_):
 	categories = []
@@ -266,11 +279,17 @@ def analyze_WC_results_with_ranking(dict_ranking,dict_wc_results,label_results):
 			# if ( get_close_matches(team))
 			print "\t", get_close_matches(team,dict_ranking['teams'].keys())
 			print "\t",team,False
-		predicted   = []
+	predicted   = []
+	predicted_teams = []
+	predicted   = []
+	predicted_teams = []
+	not_predicted   = []
+	not_predicted_teams_results = []
 	#stop_here
 	won_matches = []
 	drawn_matches = []
 	rank_diffs_in_draws = []
+	draw_info = []
 	num_of_matches = len(dict_['matches'].keys())
 	print "Number of matches = {}".format(num_of_matches)
 	for match in dict_['matches'].keys():
@@ -286,6 +305,7 @@ def analyze_WC_results_with_ranking(dict_ranking,dict_wc_results,label_results):
 		result_string, hg, ag  = analyze_result(result)
 		if ( result_string != 'draw'):	
 			won_matches.append(match)
+			
 			if ( rank1 < rank2 ):
 				result_string_rank = 'home'
 			elif (rank1 > rank2 ):
@@ -295,10 +315,14 @@ def analyze_WC_results_with_ranking(dict_ranking,dict_wc_results,label_results):
 			print '\t', result, result_string, 'prediction ', result_string_rank
 			if  (result_string == result_string_rank):
 				predicted.append(match)
+				predicted_teams.append([team1,team2])
+			else:
+				not_predicted.append(match)
+				not_predicted_teams_results.append([team1,rank1,team2,rank2,result_string,result_string_rank])
 		else:
 			drawn_matches.append(match)
 			rank_diffs_in_draws.append(abs(rank1-rank2))
-
+			draw_info.append( [team1,team2,rank1,rank2 ] )
 	print "correctly predicted victories by ranking dict of {} = {}/{} = {:.2f}\%".format(
 		label_results,len(predicted),len(won_matches),
 		100.0*len(predicted)/len(won_matches))
@@ -325,6 +349,216 @@ def analyze_WC_results_with_ranking(dict_ranking,dict_wc_results,label_results):
 
 	print "Number of quarterfinal teams in {} correctly predicted = {}/8={:.2f}\%".format(
 			label_results,len(correct_ranking),100.*len(correct_ranking)/8.0)
+	return drawn_matches,draw_info,predicted,predicted_teams,not_predicted,not_predicted_teams_results
 
-# dict_ = get_list_of_teams_in_2006WC()
-# dict_ranking  = load_dict_ranking_from_file('top_90_FIFA_rankings_May_2006.txt')
+def get_delimited_str(target_str,start_str,end_str):
+	ii = target_str.find(start_str)
+	jj = target_str.find(end_str)
+	return (target_str[ii+len(start_str):jj]).strip()
+
+def get_confederation_membership_dict(verbose=True):
+	fopen = open('all_member_nations.txt','r')
+	lines = fopen.readlines()
+	dict_ = {}
+	dict_confed = {}
+	dict_teams  = {}
+	dict_annotations = {}
+	for line in [ line.strip() for line in lines]:
+		# print line, line.split(), line.split('\t')
+		# print ""
+		if ( line.find('Confederation') != -1 ):
+			# print line.split('Confederation')[1], get_delimited_str(line,'(',')')
+			current_continent = get_delimited_str(line,'(',')') 
+			# current_confederation = 
+			current_confederation = get_delimited_str(line,'Confederation ','(',)
+			dict_confed[current_confederation]                = {}
+			dict_confed[current_confederation]['continent']   = current_continent
+			dict_confed[current_confederation]['annotations'] = []
+			dict_confed[current_confederation]['teams']       = []
+		elif ( line.find(':') != -1 ):
+			(dict_confed[current_confederation]['annotations']).append(line)	
+		else:
+			current_team = line.split('\t')[0]
+			# print team_target
+			(dict_confed[current_confederation]['teams']).append(current_team)
+			if ( len(line.split('\t')) == 1):
+				dict_teams[current_team] = dict(confederation=current_confederation)
+			else:
+				dict_teams[current_team] = dict(confederation=current_confederation,
+					annotation=line.split()[1])
+
+	# print annotations
+	fopen.close()
+	if ( verbose==True ):
+		N = 0
+		for confed in dict_confed:
+			print '\t',confed, len(dict_confed[confed]['teams'])
+			N += len(dict_confed[confed]['teams'])
+		print "Total teams ", N, " in dictionary: ", len(dict_teams.keys())
+	dict_['confed'] = dict_confed
+	dict_['teams']  = dict_teams
+	return dict_
+
+def get_confederation_membership(dict_,team_target):
+	# if ( dict_ == None ):
+	# 	dict_ = get_confederation_membership_dict()
+	# else:
+	# 	pass
+
+	if ( team_target in (dict_['teams']).keys() ):
+		team_confed = dict_['teams'][team_target]['confederation']
+	else:
+		matches =get_close_matches(team_target,dict_['teams'].keys() )
+		if ( len(matches) == 1):
+			team_confed = dict_['teams'][matches[0]]['confederation']
+		elif ( len(matches) > 1 ):
+			for j,match in enumerate(matches):
+				print j, match,
+			print ""
+			i = eval(raw_input('Select match above or enter None: '))
+			return dict_['teams'][matches[i]]['confederation']
+		else:
+			raise ValueError, "No match found for team {}".format(team_target)
+	return team_confed
+
+def test_WC_teams_for_membership(dict_membership,dict_wc_results):
+	confeds = []
+	for i,team in enumerate(dict_wc_results['teams']):
+		confed = get_confederation_membership(dict_membership,team)
+		print i+1,team,confed
+		confeds.append(confed)
+	
+	for confed in set(confeds):
+		N = 0
+		for team in dict_wc_results['teams']:
+			if ( get_confederation_membership(dict_membership,team) == confed ):
+				N += 1
+		print "Teams for ", confed, " at WC = ", N
+
+def analyze_WC_results_by_ranking_and_confed_memberships_2010():
+	dict_membership = get_confederation_membership_dict()
+	# print 'testigget_confederation_membership(dict_membership,'Mexico')
+
+	# dict_wc_results = get_list_of_teams_in_WC_soccerbase_format('2006WC_results.txt',2006)
+	# dict_wc_results = get_list_of_teams_in_WC_soccerbase_format('2002WC_results.txt',2002)
+	dict_wc_results = get_list_of_teams_in_2010WC()
+	test_WC_teams_for_membership(dict_membership,dict_wc_results)
+	dict_ranking    = load_dict_ranking_from_file('top_60_FIFA_ranking_May_2010.txt')
+	resdict = analyze_WC_results_by_ranking_and_confed_memberships('2010 WC',
+		dict_ranking,dict_membership,dict_wc_results)
+	return resdict
+
+def analyze_WC_results_by_ranking_and_confed_memberships_2006():
+	dict_membership = get_confederation_membership_dict()
+	dict_wc_results = get_list_of_teams_in_WC_soccerbase_format('2006WC_results.txt',2006)
+
+	test_WC_teams_for_membership(dict_membership,dict_wc_results)
+	dict_ranking    = load_dict_ranking_from_file('top_90_FIFA_ranking_May_2006.txt')
+	resdict = analyze_WC_results_by_ranking_and_confed_memberships('2006 WC',
+		dict_ranking,dict_membership,dict_wc_results)
+	return resdict
+	
+def analyze_WC_results_by_ranking_and_confed_memberships_2002():
+	dict_membership = get_confederation_membership_dict()
+	dict_wc_results = get_list_of_teams_in_WC_soccerbase_format('2002WC_results.txt',2002)
+
+	test_WC_teams_for_membership(dict_membership,dict_wc_results)
+	dict_ranking    = load_dict_ranking_from_file('top_90_FIFA_ranking_May_2002.txt')
+	resdict = analyze_WC_results_by_ranking_and_confed_memberships('2002 WC',
+		dict_ranking,dict_membership,dict_wc_results)
+	return resdict
+	
+def analyze_WC_results_by_ranking_and_confed_memberships(label_str,dict_ranking,dict_membership,
+		dict_wc_results,intraconfederation=False):
+	draws,draw_teams,pre,pre_t,not_predicted,not_predicted_teams_results = analyze_WC_results_with_ranking(
+		dict_ranking,dict_wc_results,label_str)
+	print "Analysis of ranking predicted results for ", label_str
+	print "\t Results within same confed are not included : {}".format(intraconfederation)
+	print "\t predicted wins, not predicted wins, draws",len(pre), len(not_predicted_teams_results), len(draws)
+	print "\t tot matches = ",len(pre)+ len(not_predicted_teams_results)+ len(draws)
+
+	print "Wins not predicted"
+	print '\t {:15} {:3} {:15} {:3} {:10} {:10} {:12} {:7}'.format('Home','Rnk','Away','Rnk',
+		'Result','Res Pred','Winning team','Confed')
+	confeds_not_predicted = []
+	confeds_involved_in_each_match = []
+	for i,match in enumerate(not_predicted):
+		# 
+		info = not_predicted_teams_results[i]
+		result_str = info[4]
+		if ( result_str == 'home'):
+			winning_team = info[0]
+			losing_team  = info[2]
+		else:
+			winning_team = info[2]
+			losing_team  = info[0]
+
+		winning_team_confed = get_confederation_membership(dict_membership,winning_team)
+		losing_team_confed  = get_confederation_membership(dict_membership,losing_team)
+
+		if ( intraconfederation == True ):
+			confeds_not_predicted.append( winning_team_confed )
+			print '\t {:15} {:3} {:15} {:3} {:10} {:10} {:12} {:7}'.format(*(info+[winning_team,winning_team_confed]))
+			confeds_involved_in_each_match.append( [winning_team_confed,losing_team_confed])
+		else:
+			if ( winning_team_confed != losing_team_confed ):
+				confeds_not_predicted.append( winning_team_confed )
+				print '\t {:15} {:3} {:15} {:3} {:10} {:10} {:12} {:7}'.format(*(info+[winning_team,winning_team_confed]))
+				confeds_involved_in_each_match.append( [winning_team_confed,losing_team_confed])
+
+
+	confeds = dict_membership['confed'].keys()
+	print "Breakdown by confed"
+	results_dict = {}
+	results_dict[label_str] = {}
+	for confed in confeds:
+		print '{:10} {}'.format(confed, confeds_not_predicted.count(confed))
+		results_dict[label_str][confed] = dict(number=confeds_not_predicted.count(confed),
+			percent=confeds_not_predicted.count(confed)/len(confeds_not_predicted),
+			total=len(confeds_not_predicted) )
+	print "Total matches in sample", len(confeds_involved_in_each_match)
+	for confed in confeds:
+		Nmatch = 0
+		for confeds in confeds_involved_in_each_match:
+			if confed in confeds:
+				Nmatch += 1
+		print "\t Number of matches that involed {} = {}".format(confed,Nmatch)
+
+		results_dict[label_str][confed]['matches'] = Nmatch
+		# if confed in confeds_in_each_match:
+			# print True
+			
+
+
+	return results_dict
+
+def analysis_of_all_ranking_mispredicted_based_on_confed():
+	dict_2010 = analyze_WC_results_by_ranking_and_confed_memberships_2010()
+	dict_2006 = analyze_WC_results_by_ranking_and_confed_memberships_2006()
+	dict_2002 = analyze_WC_results_by_ranking_and_confed_memberships_2002()
+	dicts = [dict_2010,dict_2006, dict_2002]
+	dict_membership = get_confederation_membership_dict(verbose=False)
+
+	print "Want to predict probability based on confederation for ranking did not 'predict' correct results"
+	confeds = dict_membership['confed'].keys()
+	# print confeds
+	print '{:10}'.format("Confed"),
+	for dict_ in dicts:
+		for key in dict_:
+			print '{:>10}'.format(key[0:0+4]),
+	print "| Total intraconfed matches"
+	# 18+15+13
+	for confed in confeds:
+		# print key,
+		print '{:10}'.format(confed),
+		N = 0
+		Ntot = 0
+		for dict_ in dicts:
+			for key in dict_:
+				# print key
+				print '{:6}({:2})'.format(dict_[key][confed]['number'],dict_[key][confed]['total']),
+				N += dict_[key][confed]['number']
+			Ntot += dict_[key][confed]['matches']
+		if ( Ntot != 0): print '| {:2}/{:2} - {:.0f}%'.format(N,Ntot,100.*N/Ntot),
+		print ""
+
