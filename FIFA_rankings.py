@@ -124,8 +124,25 @@ def analyze_result(result):
 		result_string ='away'
 	return result_string,homegoals,awaygoals
 
+def get_number_of_points(result_str,hteam,ateam, targetteam):
+	result_string,homegoals,awaygoals = analyze_result(result_str)
+	if ( targetteam == hteam):
+		if ( result_string == 'home'):
+			return 3
+		elif ( result_string == 'away'):
+			return 0
+		else:
+			return 1
+	elif ( targetteam == ateam):
+		if ( result_string == 'home'):
+			return 0
+		elif ( result_string == 'away'):
+			return 3
+		else:
+			return 1
+
+
 def analyze_2010_WC_with_ranking():
-	
 	dict_ranking = load_dict_ranking_from_file()
 	dict_ = get_list_of_teams_in_2010WC()
 	for i,team in enumerate(dict_['teams']):
@@ -141,8 +158,8 @@ def analyze_2010_WC_with_ranking():
 			print "\t", get_close_matches(team,dict_ranking['teams'].keys())
 			print "\t",team,False
 		predicted   = []
-	won_matches = []
-	drawn_matches = []
+	won_matches         = []
+	drawn_matches       = []
 	rank_diffs_in_draws = []
 	num_of_matches = len(dict_['matches'].keys())
 	for match in dict_['matches'].keys():
@@ -200,6 +217,73 @@ def analyze_2010_WC_results_rankings():
 	dict_ranking    = load_dict_ranking_from_file('top_60_FIFA_ranking_May_2010.txt')
 	analyze_WC_results_with_ranking(dict_ranking,dict_wc_results,'2010 WC')
 
+def analyze_2010_WC_results_rankings_mod():
+	dict_wc_results = get_list_of_teams_in_2010WC()
+	dict_ranking    = load_dict_ranking_from_file('top_60_FIFA_ranking_May_2010.txt')
+	dict_           = get_2010_ranking_dicts_comparison() 
+	# table obtained from Nate Silver analysis
+	# http://espnfc.com/world-cup/columns/story/_/id/5392992/ce/us/soccer-power-index-update?cc=5901&ver=us
+
+
+	dict_ranking    = dict_['SPI']
+	analyze_WC_results_with_ranking(dict_ranking,dict_wc_results,'2010 WC')
+
+def get_2010_ranking_dicts_comparison():
+		fopen = open('2010_various_ranking.txt','r')
+		lines= fopen.readlines()
+		header = lines[0].strip()
+		ranking_labels = header.split('\t')[1:]
+		print ranking_labels
+		fopen.close()
+		dict_ = {}
+		for label in ranking_labels:
+			dict_[label] = {}
+			dict_[label]['teams'] = {}
+
+		for i in range(1,1+len(ranking_labels)):
+			print ranking_labels[i-1]
+			for line in [ line.strip() for line in lines[1:] ]:
+				# print line
+				elements = line.split('\t')
+				# print len(elements)
+				team = elements[0]
+				dict_[ranking_labels[i-1]]['teams'][team] = dict(rank=eval(elements[i]))
+		print dict_
+		# raise ValueError, 'here'
+		return dict_
+
+def analyze_2010_WC_results_points_generated_vs_ranking():
+	
+
+
+	dict_wc_results = get_list_of_teams_in_2010WC()
+	dict_ranking    = load_dict_ranking_from_file('top_60_FIFA_ranking_May_2010.txt')
+	dict_           = get_2010_ranking_dicts_comparison() 
+	# table obtained from Nate Silver analysis
+	# http://espnfc.com/world-cup/columns/story/_/id/5392992/ce/us/soccer-power-index-update?cc=5901&ver=us
+
+
+	dict_ranking_2    = dict_['FIFA']
+	for team in dict_wc_results['teams']:
+		print team, dict_ranking['teams'][team]['rank'], dict_ranking_2['teams'][team]['rank']
+	colors = ['r','b','g','k','y']
+	figure(1); clf()
+	for color,key in zip(colors,dict_.keys()):
+		dict_ranking = dict_[key]
+		if ( key != 'Actual'):
+			analyze_WC_results_points_vs_ranking(dict_ranking,dict_wc_results,'2010 WC {}'.format(key),
+				color=color)
+	# SOME ANALYSIS
+	# The fifa rankings were significantly less predicted when measured by the R^2 of the resulting linear regression line
+	# when calculated over points/game and rank. 
+	# either of the reamining 3 ranking systems were about equal by this measure.
+	# Taking the absolute best of these 3 very closely packed rankings, the SPI, would seem to suggest that
+	# (in JAN 2014 ), the top seeds should be Brazil, Argentina, Spain Germany, Colombia,
+	# Uruguay, Chile and France
+	# i.e. so that Switzerland and Belgium would be replaced with Chile and France.
+	# Need more analysis of these other rankings that I did with FIFA's official. To see if they really would have predicted 
+	# the winner in more cases. The predicted favorite by the SPI ranking was actually less than FIFA. Curiously.
+	# 
 def analyze_2006_WC_results_rankings():
 	# dict_wc_results = get_list_of_teams_in_2006WC()
 	dict_wc_results = get_list_of_teams_in_WC_soccerbase_format('2006WC_results.txt',2006)
@@ -208,6 +292,13 @@ def analyze_2006_WC_results_rankings():
 	dict_ranking    = load_dict_ranking_from_file('top_90_FIFA_rankings_May_2006.txt')
 	analyze_WC_results_with_ranking(dict_ranking,dict_wc_results,'2006 WC')
 
+def analyze_2006_WC_results_points_generated_vs_ranking():
+	# dict_wc_results = get_list_of_teams_in_2010WC()
+	dict_wc_results = get_list_of_teams_in_WC_soccerbase_format('2006WC_results.txt',2006)
+
+	dict_ranking    = load_dict_ranking_from_file('top_90_FIFA_ranking_May_2006.txt')
+	analyze_WC_results_points_vs_ranking(dict_ranking,dict_wc_results,'2006 WC',color='b')
+
 def analyze_2002_WC_results_rankings():
 	dict_wc_results = get_list_of_teams_in_WC_soccerbase_format('2002WC_results.txt',2002)
 	analyze_WC_results_dict(dict_wc_results)
@@ -215,11 +306,21 @@ def analyze_2002_WC_results_rankings():
 	dict_ranking    = load_dict_ranking_from_file('top_90_FIFA_ranking_May_2002.txt')
 	analyze_WC_results_with_ranking(dict_ranking,dict_wc_results,'2002 WC')
 
+
+def analyze_2002_WC_results_points_generated_vs_ranking():
+	dict_wc_results = get_list_of_teams_in_WC_soccerbase_format('2002WC_results.txt',2002)
+	analyze_WC_results_dict(dict_wc_results)
+	# stop_here
+	dict_ranking    = load_dict_ranking_from_file('top_90_FIFA_ranking_May_2002.txt')
+	# analyze_WC_results_with_ranking(dict_ranking,dict_wc_results,'2002 WC')
+
+	analyze_WC_results_points_vs_ranking(dict_ranking,dict_wc_results,'2002 WC',color='g')
+
 def parse_wikipedia_team_confederation(filename1,team):
 	pass
 
 import os
-def add_files_to_repo(files):
+def add_files_to_repo(files=['*.py','*.txt','*.csv']):
 	for file1 in files:
 		os.system('git add {}'.format(file1))
 
@@ -350,6 +451,53 @@ def analyze_WC_results_with_ranking(dict_ranking,dict_wc_results,label_results):
 	print "Number of quarterfinal teams in {} correctly predicted = {}/8={:.2f}\%".format(
 			label_results,len(correct_ranking),100.*len(correct_ranking)/8.0)
 	return drawn_matches,draw_info,predicted,predicted_teams,not_predicted,not_predicted_teams_results
+
+def analyze_WC_results_points_vs_ranking(dict_ranking,dict_wc_results,label_results,color='r'):
+	from difflib import get_close_matches
+	# dict_ranking = load_dict_ranking_from_file()
+	dict_  = dict_wc_results
+	# dict_ = get_list_of_teams_in_2010WC()
+	for i,team in enumerate(dict_['teams']):
+		# print team
+		#print dict_ranking['teams'].keys()
+		#break
+		if team in (dict_ranking['teams'].keys()):
+			#print i+1,team, dict_ranking['teams'][team]['rank']
+			pass
+		else:
+			print team, " in ", label_results
+			# if ( get_close_matches(team))
+			print "\t", get_close_matches(team,dict_ranking['teams'].keys())
+			print "\t",team,False
+	points_generated, prewc_ranks, points_per_game = [],[], []
+	num_of_matches = len(dict_['matches'].keys())
+	print "Number of matches = {}".format(num_of_matches)
+	for team in dict_['teams']:
+		
+		Nmatches = 0
+		points   = 0
+		for match in dict_['matches'].keys():
+			if ( team in [dict_['matches'][match]['team1'],dict_['matches'][match]['team2'] ]):
+				# print match
+				Nmatches += 1
+				hometeam, awayteam = dict_['matches'][match]['team1'],dict_['matches'][match]['team2'] 
+				result_string = dict_['matches'][match]['result']
+				points += get_number_of_points(result_string,hometeam,awayteam,team)
+
+		# print team, Nmatches, points
+
+		rankteam = dict_ranking['teams'][team]['rank']
+		points_generated.append(points)
+		points_per_game.append(1.0*points/Nmatches)
+		prewc_ranks.append(rankteam)
+	
+	figure(1)
+	# clf()
+	print color, label_results
+	plot(prewc_ranks,points_per_game,'o',markeredgewidth=3.0,mfc='None',markeredgecolor=color)
+	title("points/game generated vs pre-WC FIFA ranking")
+	a,b,RR = linreg(prewc_ranks,points_generated)
+	print RR
 
 def get_delimited_str(target_str,start_str,end_str):
 	ii = target_str.find(start_str)
@@ -551,7 +699,7 @@ def analysis_of_all_ranking_mispredicted_based_on_confed():
 	for confed in confeds:
 		# print key,
 		print '{:10}'.format(confed),
-		N = 0
+		N    = 0
 		Ntot = 0
 		for dict_ in dicts:
 			for key in dict_:
