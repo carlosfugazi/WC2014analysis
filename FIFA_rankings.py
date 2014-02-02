@@ -676,8 +676,6 @@ def analyze_WC_results_by_ranking_and_confed_memberships(label_str,dict_ranking,
 		# if confed in confeds_in_each_match:
 			# print True
 			
-
-
 	return results_dict
 
 def analysis_of_all_ranking_mispredicted_based_on_confed():
@@ -709,4 +707,12 @@ def analysis_of_all_ranking_mispredicted_based_on_confed():
 			Ntot += dict_[key][confed]['matches']
 		if ( Ntot != 0): print '| {:2}/{:2} - {:.0f}%'.format(N,Ntot,100.*N/Ntot),
 		print ""
-
+		
+###		
+### idea download all results from all world cups,
+###
+# plot the number of points for each confederation in terms of pts/game over time.
+# should give a good indication of how things have changed over time for the confederations
+# should also allow for alternate definitions of names, makes everything much easier rather than
+# editing the source files
+# base camps have been announced, would be beautiful if I could incorporate this to calculations
