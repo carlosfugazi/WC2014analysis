@@ -1,0 +1,12 @@
+Steps for installing PIL image library on MAC
+
+
+1. Download appropriate version of software from: 
+http://www.pythonware.com/products/pil/#pil117
+
+2. Need free type from macports
+	sudo port install freetype
+	sudo ln -s /opt/local/include/freetype2 /opt/local/include/	freetype
+
+3. Do ./BUILDME in Imaging-x.x.x folder
+4. Do sudo python setup.py install
