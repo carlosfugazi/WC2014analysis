@@ -10,3 +10,4 @@ http://www.pythonware.com/products/pil/#pil117
 
 3. Do ./BUILDME in Imaging-x.x.x folder
 4. Do sudo python setup.py install
+5. done
