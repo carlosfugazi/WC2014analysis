@@ -182,14 +182,14 @@ figure(1); clf()
 #	keys[ all_possible_paths.index(min(all_possible_paths))][0],
 #	keys[ all_possible_paths.index(min(all_possible_paths))][1], min(all_possible_paths) )
 kwargs=dict()
-plot_backround_image('1000px-WC-2014-Brasil.png',[0.05, 0.1, .90, .80],alpha=0.41)
+plot_backround_image('images/1000px-WC-2014-Brasil.png',[0.05, 0.1, .90, .80],alpha=0.41)
 flag_alpha=0.75
-plot_backround_image('1000px-Flag_of_Brazil.png',[0.638, 0.65, .10, .10],alpha=flag_alpha)
-plot_backround_image('1000px-Flag_of_Spain.png',[0.252, 0.65, .10, .10],alpha=flag_alpha)
-plot_backround_image('1000px-Flag_of_Germany.png',[0.115, 0.325, .10, .10],alpha=flag_alpha)
-plot_backround_image('1000px-Flag_of_Argentina.png',[0.31, 0.80, .10, .10],alpha=flag_alpha)
+plot_backround_image('images/1000px-Flag_of_Brazil.png',[0.638, 0.65, .10, .10],alpha=flag_alpha)
+plot_backround_image('images/1000px-Flag_of_Spain.png',[0.252, 0.65, .10, .10],alpha=flag_alpha)
+plot_backround_image('images/1000px-Flag_of_Germany.png',[0.115, 0.325, .10, .10],alpha=flag_alpha)
+plot_backround_image('images/1000px-Flag_of_Argentina.png',[0.31, 0.80, .10, .10],alpha=flag_alpha)
 
-plot_backround_image('Twitter_bird_logo_2012.png',[0.125,0.90,0.10,0.10],alpha=0.75)
+plot_backround_image('images/Twitter_bird_logo_2012.png',[0.125,0.90,0.10,0.10],alpha=0.75)
 axes([0.1,0.125,0.8,0.79],frameon=False)
 nice_histogram_plot(all_possible_paths,div_miles=100.0,color=(0,172/(255.),237/(255.)))
 
